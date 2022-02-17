@@ -748,15 +748,17 @@ class Window(pyglet.window.Window):
                 return X, Y, Z
             if os.path.exists("MyCode.py"):
                 try:
-                    exec(open("MyCode.py").read())
                     print("MyCode.py loaded successfully")
+                    exec(open("MyCode.py").read(), globals(), locals())
                 except:
                     print(sys.exc_info[1])
         elif symbol == key.H:
+            print("Making hills")
             # Make Hills
             MakeHills(self.model, self)
         elif symbol == key.C:
             # Clear all the canvas
+            print("Canvas cleared")
             self.model.clear()
             MakeWorld(self.model, self)
         elif symbol == key.TAB:
