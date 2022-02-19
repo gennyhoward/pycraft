@@ -741,6 +741,7 @@ class Window(pyglet.window.Window):
             self.model.world = {}
             MakeWorld(self.model, self)
             SetBlock = self.model.add_block
+            ClearBlock = self.model.remove_block
             def Position(float=False):
                 X, Y, Z = self.position
                 if not float:
